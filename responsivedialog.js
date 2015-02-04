@@ -21,7 +21,8 @@ var ResponsiveDialog = ResponsiveDialog || {};
     var dialogsLoaded = false,
         dialogsFrameInitialized = false,
         dialogsIFrame = null,
-        DIALOGS_ID = "ResponsiveDialogFrame";
+        DIALOGS_ID = "ResponsiveDialogFrame",
+        parentDocumentBodyScroll = null; // storing state
     
     function _init(options){
         if (dialogsFrameInitialized==true) {
@@ -54,21 +55,20 @@ var ResponsiveDialog = ResponsiveDialog || {};
         dialogsIFrame = document.createElement("iframe");
         dialogsIFrame.id = DIALOGS_ID;
         dialogsIFrame.style.zIndex = settings.zIndex;
-        dialogsIFrame.style.position = "absolute";
-        dialogsIFrame.style.overflow = "hidden";
-        dialogsIFrame.style.width = "100%";
-        dialogsIFrame.style.height = "100%";
-        dialogsIFrame.style.zIndex = "-1";
+        // hide iframe
         dialogsIFrame.style.display = "none";
         dialogsIFrame.style.visibility = "hidden";
+        // set size, make it stretched
+        dialogsIFrame.style.position = "fixed";
         dialogsIFrame.style.top = "0";
         dialogsIFrame.style.bottom = "0";
         dialogsIFrame.style.left = "0";
         dialogsIFrame.style.right = "0";
+        dialogsIFrame.style.width = "100%";
+        // disable any borders, margins, make it transparent
         dialogsIFrame.frameBorder = 0;
         dialogsIFrame.marginWidth = 0;
         dialogsIFrame.marginHeight = 0;
-        dialogsIFrame.scrolling = "no";
         dialogsIFrame.setAttribute('allowtransparency', 'true');
         dialogsIFrame.setAttribute('vspace', '0');
         dialogsIFrame.setAttribute('hspace', '0');
@@ -95,6 +95,8 @@ var ResponsiveDialog = ResponsiveDialog || {};
         dialogsIFrame.style.height = "100%";
         dialogsIframe.style.display = "block";
         dialogsIframe.style.visibility = "visible";
+        parentDocumentBodyScroll = document.body.style.overflowY;
+        document.body.style.overflowY = "hidden"; // hide parent document scrolling
         dialogsIframe.contentWindow.showDialog(dialogHref);
     }
 
@@ -112,13 +114,8 @@ var ResponsiveDialog = ResponsiveDialog || {};
         dialogsIframe.style.zIndex = "-1";
         dialogsIframe.style.display = "none";
         dialogsIframe.style.visibility = "hidden";
+        document.body.style.overflowY = parentDocumentBodyScroll; // restore parent doucment scrolling
     }
-
-    window.resizeIframe = function(h) {
-        if (dialogsLoaded==false) return;
-        dialogsIFrame.style.height = (h) ? (h+'px') : (dialogsIFrame.contentWindow.document.body.scrollHeight + 'px');
-    }
-
 
     // PUBLIC API
 

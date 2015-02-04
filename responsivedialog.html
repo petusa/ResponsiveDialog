@@ -68,12 +68,6 @@
                 currentDialog = url;
             });
 
-            $(document).on('pageshow', "div[data-role=dialog]", function(event, data){
-                var url = event.target.getAttribute('data-url'); // IE does not support data set> event.target.dataset.url
-                var currentDialogHeight = $("div[data-url='" + url + "']").outerHeight();
-                parent.resizeIframe(currentDialogHeight);
-            });
-
             $(document).on('pagehide', "div[data-role=dialog]", function(event, data){
                 var url = event.target.getAttribute('data-url'); // IE does not support data set> event.target.dataset.url
                 if (url) { url = url.substring(1); }
