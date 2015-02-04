@@ -1,5 +1,5 @@
 # ResponsiveDialog
-Lightweight dialog presenter for any screens built on top of jQuery Mobile.
+Lightweight dialog presenter for any screens built on top of [jQuery Mobile](http://jquerymobile.com/).
 
 # Features
 
@@ -19,7 +19,7 @@ Lightweight dialog presenter for any screens built on top of jQuery Mobile.
 
 - Step 1: Design your dialog page following the jQuery Mobile dialog markup in a separate HTML file.
 
-You can simply grab and modify the provided dialog_template.html.
+You can simply grab and modify the provided [dialog template](dialog template.html).
 
 ```html
 <!DOCTYPE html>
@@ -70,8 +70,12 @@ You can simply grab and modify the provided dialog_template.html.
 
 - Step 4: Present your dialogs with the API
 ```html
-<a href="#" onclick="ResponsiveDialog.showDialog('dialog_template.html');return false;">Open the dialog</a>
+<a href="#" onclick="ResponsiveDialog.showDialog('dialog_template.html');return false;">
+	Open the dialog
+</a>
 ```
 
 
-Do not forget to run your code from an HTTP server. For that nginx or node.js based live-server is recommended. 
+Do not forget to run your code from an HTTP server. For that [nginx](http://nginx.org/) or the excellent [live-server](https://github.com/tapio/live-server) is recommended. 
+
+
