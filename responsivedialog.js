@@ -31,7 +31,6 @@ var ResponsiveDialog = ResponsiveDialog || {};
         }
         dialogsFrameInitialized = true;
 
-
         // read custom parameters and settings
 
         if (options && options.responsiveDialogSource){
@@ -90,19 +89,19 @@ var ResponsiveDialog = ResponsiveDialog || {};
     }
 
     function _doShowDialog(dialogHref){
-        var dialogsIframe = document.getElementById(DIALOGS_ID);
-        dialogsIframe.style.zIndex = settings.zIndex;
+        var dialogsIFrame = document.getElementById(DIALOGS_ID);
+        dialogsIFrame.style.zIndex = settings.zIndex;
         dialogsIFrame.style.height = "100%";
-        dialogsIframe.style.display = "block";
-        dialogsIframe.style.visibility = "visible";
+        dialogsIFrame.style.display = "block";
+        dialogsIFrame.style.visibility = "visible";
         parentDocumentBodyScroll = document.body.style.overflowY;
         document.body.style.overflowY = "hidden"; // hide parent document scrolling
-        dialogsIframe.contentWindow.showDialog(dialogHref);
+        dialogsIFrame.contentWindow.showDialog(dialogHref);
     }
 
     function _resetDialogs(){
-        var dialogsIframe = document.getElementById(DIALOGS_ID), classNames = dialogsIframe.className;
-        dialogsIframe.contentWindow.initDialogs();
+        var dialogsIFrame = document.getElementById(DIALOGS_ID), classNames = dialogsIFrame.className;
+        dialogsIFrame.contentWindow.initDialogs();
     }
     
     window.onDialogClosed = function(href) {
@@ -110,10 +109,10 @@ var ResponsiveDialog = ResponsiveDialog || {};
     }
 
     window.onAllDialogsClosed = function() {
-        var dialogsIframe = document.getElementById(DIALOGS_ID);
-        dialogsIframe.style.zIndex = "-1";
-        dialogsIframe.style.display = "none";
-        dialogsIframe.style.visibility = "hidden";
+        var dialogsIFrame = document.getElementById(DIALOGS_ID);
+        dialogsIFrame.style.zIndex = "-1";
+        dialogsIFrame.style.display = "none";
+        dialogsIFrame.style.visibility = "hidden";
         document.body.style.overflowY = parentDocumentBodyScroll; // restore parent doucment scrolling
     }
 
