@@ -3,19 +3,23 @@ Lightweight dialog presenter for any screens built on top of jQuery Mobile.
 
 # Features
 
-- Separates creating dialog pages from host page
+- Separates creating dialog pages from host page creation
   
   You can design and add dialogs separately, preview them alive simply opening their html pages, then present them with one line of code in your original host HTML via it's programmatic API.
 
 - Leaves your original host page intact
 
-  It does mess up your host page, not even runtime. It does not manipulate and extend the live DOM of your host page as it loads in and uses a separate overlay iframe. This iframe handles the jQuery Mobile based dialogs from external sources.
+  It does not mess up your host page, not even runtime. It does not manipulate and extend the live DOM of your host page as it loads in and uses a separate overlay iframe. This iframe handles the jQuery Mobile based dialogs from external sources. It also means you can freely combine it with any web frontend frameworks.
 
-- Ui responsive and touch enabled
+- UI responsive and touch enabled
+
+  As it is guaranteed by jQuery Mobile.
 
 # Usage
 
-- Step 1: Design your dialog page following the jQuery Mobile dialog markup in a separate HTML file. 
+- Step 1: Design your dialog page following the jQuery Mobile dialog markup in a separate HTML file.
+
+You can simply grab and modify the provided dialog_template.html.
 
 ```html
 <!DOCTYPE html>
@@ -57,9 +61,9 @@ Lightweight dialog presenter for any screens built on top of jQuery Mobile.
 </html>
 ```
 
-- Step 2: Copy responsivedialog.html and responsivedialog.css in the same folder where your dialog page is created. You may use the css file in your dialog page as to center and scale your dialog embedded images.
+- Step 2: Copy responsivedialog.html in the same folder where your dialog page is created. You may also include the responsivedialog.css file in your dialog page to assist you in centering and scaling your dialog embedded images automatically.
 
-- Step 3: Include responsivedialog.js in your HTML (either locally or remotely)
+- Step 3: Include responsivedialog.js in your host HTML page
 ```html
 <script type="text/javascript" src="http://responsivedialog.com/responsivedialog.js"></script>
 ```
@@ -68,3 +72,6 @@ Lightweight dialog presenter for any screens built on top of jQuery Mobile.
 ```html
 <a href="#" onclick="ResponsiveDialog.showDialog('dialog_template.html');return false;">Open the dialog</a>
 ```
+
+
+Do not forget to run your code from an HTTP server. For that nginx or node.js based live-server is recommended. 
