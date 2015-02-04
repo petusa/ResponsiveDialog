@@ -73,11 +73,33 @@ You can simply grab and modify the provided [dialog template](dialog template.ht
 ```
 
 - Step 4: Present your dialogs with the API
+  
+Initialize the ResponsiveDialog, you can also catch close events here:
+```javascript
+<script type="text/javascript">
+	$(document).ready(function(){
+		ResponsiveDialog.init({
+			onDialogsReady: function(){ console.log("ResponsiveDialog ready"); },
+			onDialogClosed: function(id){ console.log("responsive dialog with id '" + id + "' closed"); }
+		});
+	});
+</script>
+```
+
+Open a dialog:
 ```html
 <a href="#" onclick="ResponsiveDialog.showDialog('dialog_template.html');return false;">
 	Open the dialog
 </a>
 ```
+
+Close dialogs:
+```html
+ <a href="#" onclick="ResponsiveDialog.closeDialogs();return false;">
+ 	Close dialogs
+ </a>
+```
+  
 
 
 Do not forget to run your code from an HTTP server. For that [nginx](http://nginx.org/) or the excellent [live-server](https://github.com/tapio/live-server) is recommended. 
