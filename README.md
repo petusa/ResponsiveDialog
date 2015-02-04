@@ -32,8 +32,8 @@ You can simply grab and modify the provided [dialog template](dialog template.ht
 	    <script src="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
 	</head>
 	<body>
-		<div data-role="dialog">
-			<div data-role="header" data-theme="a">
+		<div data-role="dialog" data-theme="a">
+			<div data-role="header">
 				<h1>
 					Name your dialog
 				</h1>
@@ -42,17 +42,21 @@ You can simply grab and modify the provided [dialog template](dialog template.ht
 				<p>
 					Place content here
 				</p>
+				<br>
 				<div class="img-container">
 					<div class="centerer"></div>
 			        <img src="<ADD IMAGE HERE THAT WILL SCALE AUTOMATICALLY>" alt="Your scalable image." />
 			    </div
+			    <br>
+			    <br>
 				<p>
 					You can place another content here.
 				</p>
-				<a href="responsivedialog.html" data-role="button" data-theme="a">
+				<br>
+				<a href="responsivedialog.html" data-role="button">
 					Close the dialog
 				</a>
-				<a href="http://<AN EXTERNAL LINK>" target="_blank" data-role="button" data-theme="a">
+				<a href="https://github.com/petusa/ResponsiveDialog" target="_blank" data-role="button">
 					Open external page
 				</a>
 			</div>
@@ -61,7 +65,7 @@ You can simply grab and modify the provided [dialog template](dialog template.ht
 </html>
 ```
 
-- Step 2: Copy responsivedialog.html in the same folder where your dialog page is created. You may also include the responsivedialog.css file in your dialog page to assist you in centering and scaling your dialog embedded images automatically.
+- Step 2: Copy [responsivedialog.html](responsivedialog.html) in the same folder where your dialog page is created. You may also include the [responsivedialog.css](responsivedialog.css) file in your dialog page to assist you in centering and scaling your dialog embedded images automatically.
 
 - Step 3: Include responsivedialog.js in your host HTML page
 ```html
