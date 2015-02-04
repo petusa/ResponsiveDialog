@@ -1,0 +1,106 @@
+<!-- 
+ * ResponsiveDialog 0.0.1
+ * http://github.com/petusa/ResponsiveDialog
+ * 
+ * Copyright 2015, Peter Nagy (petusa)
+ * Dual licensed under the:
+ *  - MIT License (http://opensource.org/licenses/mit-license.php)
+ *  - GNU GPL (http://opensource.org/licenses/gpl-license.php)
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Non visible container page</title>
+    <script type="text/javascript">
+        // tiny hack to set base uri (hate doing it but http servers differ when serving resources from relative paths)
+        var h=document.location.href,rh;if(h.indexOf(".html")>-1){rh=h.substr(0,h.lastIndexOf("/")+1);}else{rh=(h[h.length-1]=="/")?h:(h+"/");}document.write("<base href='"+rh+"'/>");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+    <link rel="stylesheet" href="responsivedialog.css" />
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+    <style type="text/css">
+        .ui-dialog-contain {
+            opacity: 1 !important;
+            background: #FFFFFF !important;
+        }
+        .ui-dialog .ui-header .ui-btn-icon-notext {
+            display: none !important;
+        }
+        .ui-dialog-background {
+            opacity: 0.5;
+            display: block !important;
+            -webkit-transition: opacity 0.5s ease-in;
+        }
+        .ui-dialog-background.pop.in {
+            opacity: 1;
+            -webkit-transition: opacity 0.5s ease-in;
+        }
+        .ui-dialog {
+            min-height: 100% !important;
+            background: transparent !important;
+        }
+        .ui-page, .ui-body-c, .ui-page-active, .ui-overlay-c, .ui-mobile-viewport {
+            background: transparent !important;
+        }
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.7;
+            filter:alpha(opacity=70);
+        }
+    </style>
+    <script>
+
+        $(document).ready(function() {
+            
+            var currentDialog = null;
+
+            $(document).on('pagebeforeshow', "div[data-role=dialog]", function(event, data){
+                var url = event.target.getAttribute('data-url'); // IE does not support data set> event.target.dataset.url
+                if (url) { url = url.substring(1); }
+                currentDialog = url;
+            });
+
+            $(document).on('pageshow', "div[data-role=dialog]", function(event, data){
+                var url = event.target.getAttribute('data-url'); // IE does not support data set> event.target.dataset.url
+                var currentDialogHeight = $("div[data-url='" + url + "']").outerHeight();
+                parent.resizeIframe(currentDialogHeight);
+            });
+
+            $(document).on('pagehide', "div[data-role=dialog]", function(event, data){
+                var url = event.target.getAttribute('data-url'); // IE does not support data set> event.target.dataset.url
+                if (url) { url = url.substring(1); }
+                parent.onDialogClosed(url);
+                if (currentDialog == url){
+                    parent.onAllDialogsClosed(url);
+                    currentDialog = null;
+                }
+            });
+
+            window.showDialog = function(dialogHref){
+                if (currentDialog && currentDialog==dialogHref) return;
+                $.mobile.changePage(dialogHref, { role:"dialog", changeHash:true, transition: "flip" } ); 
+                // CHROME BUG: changeHash should always be true, but in chrome we cannot use> <a href="#">link</a> but instead <a href="dialogs.html">link</a>
+            }
+
+            window.initDialogs = function(){
+                showDialog("responsivedialog.html"); // to return to the root history entry directly
+            }
+
+        });
+        
+    </script>
+</head>
+<body style="background-color:transparent;">
+    <div id="background"></div>
+    <div data-role="page" style="max-height:420px; min-height:420px;" data-close-btn="right" data-close-btn-text="right">
+    </div>
+</body>
+</html>

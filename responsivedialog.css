@@ -1,0 +1,25 @@
+/* ResponsiveDialog 0.0.1
+ * http://github.com/petusa/ResponsiveDialog
+ * 
+ * Copyright 2015, Peter Nagy (petusa)
+ * Dual licensed under the:
+ *  - MIT License (http://opensource.org/licenses/mit-license.php)
+ *  - GNU GPL (http://opensource.org/licenses/gpl-license.php)
+ **/
+
+/* helper css to center images within the responsive dialogs */
+.img-container {
+    position: relative;
+    padding: 0px;
+    text-align:center;
+}
+.img-container .centerer {
+    display: inline-block;
+    vertical-align: middle;
+}
+.img-container img {
+    vertical-align: middle;
+    display: inline-block;
+    max-height: 100%;
+    max-width: 100%;
+}
