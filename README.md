@@ -19,13 +19,13 @@ Lightweight dialog presenter for any screens built on top of [jQuery Mobile](htt
 
 - Step 1: Design your dialog page following the jQuery Mobile dialog markup in a separate HTML file.
 
-You can simply grab and modify the provided [dialog template](dialog template.html).
+You can simply grab and modify the provided [dialog_template.html](dialog_template.html).
 
 ```html
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
 	    <link rel="stylesheet" href="//responsivedialog.com/responsivedialog.css" />
 	    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
