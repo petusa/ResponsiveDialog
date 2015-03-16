@@ -45,8 +45,8 @@ You can simply grab and modify the provided [dialog_template.html](dialog_templa
 				<br>
 				<div class="img-container">
 					<div class="centerer"></div>
-			        <img src="<ADD IMAGE HERE THAT WILL SCALE AUTOMATICALLY>" alt="Your scalable image." />
-			    </div
+			        	<img src="<ADD IMAGE HERE THAT WILL SCALE AUTOMATICALLY>" alt="Your scalable image." />
+			    	</div>
 			    <br>
 			    <br>
 				<p>
