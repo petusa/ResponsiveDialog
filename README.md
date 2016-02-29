@@ -108,8 +108,10 @@ Close dialogs:
  </a>
 ```
 
+# Testing
 
+Do not forget to run your project from an HTTP server in order to test it out.
 
-Do not forget to run your code from an HTTP server. For that [nginx](http://nginx.org/) or the excellent [live-server](https://github.com/tapio/live-server) is recommended.
+For that [nginx](http://nginx.org/) or the excellent [live-server](https://github.com/tapio/live-server) is recommended.
 
-
+The simpliest way to start is to download the [ResponsiveDialog project](https://github.com/petusa/ResponsiveDialog/archive/master.zip) and serve the donwloaded folder via HTTP (nginx, or live-server), then navigate to sample.html.
