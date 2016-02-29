@@ -4,7 +4,7 @@ Lightweight dialog presenter for any screens built on top of [jQuery Mobile](htt
 # Features
 
 - Separates creating dialog pages from host page creation
-  
+
   You can design and add dialogs separately, preview them alive simply opening their html pages, then present them with one line of code in your original host HTML via it's programmatic API.
 
 - Leaves your original host page intact
@@ -24,44 +24,44 @@ You can simply grab and modify the provided [dialog_template.html](dialog_templa
 ```html
 <!DOCTYPE html>
 <html>
-	<head>
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
-	    <link rel="stylesheet" href="//responsivedialog.com/responsivedialog.css" />
-	    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-	    <script src="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
-	</head>
-	<body>
-		<div data-role="dialog" data-theme="a">
-			<div data-role="header">
-				<h1>
-					Name your dialog
-				</h1>
-			</div>
-			<div role="main" class="ui-content">
-				<p>
-					Place content here
-				</p>
-				<br>
-				<div class="img-container">
-					<div class="centerer"></div>
-			        	<img src="<ADD IMAGE HERE THAT WILL SCALE AUTOMATICALLY>" alt="Your scalable image." />
-			    	</div>
-			    <br>
-			    <br>
-				<p>
-					You can place another content here.
-				</p>
-				<br>
-				<a href="responsivedialog.html" data-role="button">
-					Close the dialog
-				</a>
-				<a href="https://github.com/petusa/ResponsiveDialog" target="_blank" data-role="button">
-					Open external page
-				</a>
-			</div>
-		</div>
-	</body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+        <link rel="stylesheet" href="//responsivedialog.com/responsivedialog.css" />
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+    </head>
+    <body>
+        <div data-role="dialog" data-theme="a">
+            <div data-role="header">
+                <h1>
+                    Name your dialog
+                </h1>
+            </div>
+            <div role="main" class="ui-content">
+                <p>
+                    Place content here
+                </p>
+                <br>
+                <div class="img-container">
+                    <div class="centerer"></div>
+                        <img src="<ADD IMAGE HERE THAT WILL SCALE AUTOMATICALLY>" alt="Your scalable image." />
+                    </div>
+                <br>
+                <br>
+                <p>
+                    You can place another content here.
+                </p>
+                <br>
+                <a href="responsivedialog.html" data-role="button">
+                    Close the dialog
+                </a>
+                <a href="https://github.com/petusa/ResponsiveDialog" target="_blank" data-role="button">
+                    Open external page
+                </a>
+            </div>
+        </div>
+    </body>
 </html>
 ```
 
@@ -73,35 +73,35 @@ You can simply grab and modify the provided [dialog_template.html](dialog_templa
 ```
 
 - Step 4: Present your dialogs with the API
-  
+
 Initialize the ResponsiveDialog, you can also catch close events here:
 ```javascript
 <script type="text/javascript">
-	$(document).ready(function(){
-		ResponsiveDialog.init({
-			onDialogsReady: function(){ console.log("ResponsiveDialog ready"); },
-			onDialogClosed: function(id){ console.log("responsive dialog with id '" + id + "' closed"); }
-		});
-	});
+    $(document).ready(function(){
+        ResponsiveDialog.init({
+            onDialogsReady: function(){ console.log("ResponsiveDialog ready"); },
+            onDialogClosed: function(id){ console.log("responsive dialog with id '" + id + "' closed"); }
+        });
+    });
 </script>
 ```
 
 Open a dialog:
 ```html
 <a href="#" onclick="ResponsiveDialog.showDialog('dialog_template.html');return false;">
-	Open the dialog
+    Open the dialog
 </a>
 ```
 
 Close dialogs:
 ```html
  <a href="#" onclick="ResponsiveDialog.closeDialogs();return false;">
- 	Close dialogs
+    Close dialogs
  </a>
 ```
-  
 
 
-Do not forget to run your code from an HTTP server. For that [nginx](http://nginx.org/) or the excellent [live-server](https://github.com/tapio/live-server) is recommended. 
+
+Do not forget to run your code from an HTTP server. For that [nginx](http://nginx.org/) or the excellent [live-server](https://github.com/tapio/live-server) is recommended.
 
 

@@ -1,6 +1,6 @@
 /* ResponsiveDialog 0.0.1
  * http://github.com/petusa/ResponsiveDialog
- * 
+ *
  * Copyright 2015, Peter Nagy (petusa)
  * Dual licensed under the:
  *  - MIT License (http://opensource.org/licenses/mit-license.php)
@@ -9,13 +9,13 @@
 
 var ResponsiveDialog = ResponsiveDialog || {};
 (function(api){
-    
+
     var settings = {
         responsiveDialogSource : "responsivedialog.html",
         onDialogsReady: function(){ /* noop */ },
         onDialogClosed: function(id) { /* noop */ },
         zIndex: "9999999",
-        dialogsFolder: "dialogs"
+        dialogsFolder: "../dialogs"
     }
 
     var dialogsLoaded = false,
@@ -23,7 +23,7 @@ var ResponsiveDialog = ResponsiveDialog || {};
         dialogsIFrame = null,
         DIALOGS_ID = "ResponsiveDialogFrame",
         parentDocumentBodyScroll = null; // storing state
-    
+
     function _init(options){
         if (dialogsFrameInitialized==true) {
             console.log("WARNING: Responsive dialogs frame already intitilized, try to reload the document instead.");
@@ -103,7 +103,7 @@ var ResponsiveDialog = ResponsiveDialog || {};
         var dialogsIFrame = document.getElementById(DIALOGS_ID), classNames = dialogsIFrame.className;
         dialogsIFrame.contentWindow.initDialogs();
     }
-    
+
     window.onDialogClosed = function(href) {
         settings.onDialogClosed(href);
     }
@@ -119,9 +119,9 @@ var ResponsiveDialog = ResponsiveDialog || {};
     // PUBLIC API
 
     api.init = _init;
-    
+
     api.showDialog = _showDialog;
-    
+
     api.closeDialogs = _resetDialogs;
 
 }(ResponsiveDialog));

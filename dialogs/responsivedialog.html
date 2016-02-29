@@ -1,7 +1,7 @@
-<!-- 
+<!--
  * ResponsiveDialog 0.0.1
  * http://github.com/petusa/ResponsiveDialog
- * 
+ *
  * Copyright 2015, Peter Nagy (petusa)
  * Dual licensed under the:
  *  - MIT License (http://opensource.org/licenses/mit-license.php)
@@ -18,7 +18,7 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
-    <link rel="stylesheet" href="responsivedialog.css" />
+    <link rel="stylesheet" href="//responsivedialog.com/responsivedialog.css" />
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
     <style type="text/css">
@@ -59,7 +59,7 @@
     <script>
 
         $(document).ready(function() {
-            
+
             var currentDialog = null;
 
             $(document).on('pagebeforeshow', "div[data-role=dialog]", function(event, data){
@@ -80,7 +80,7 @@
 
             window.showDialog = function(dialogHref){
                 if (currentDialog && currentDialog==dialogHref) return;
-                $.mobile.changePage(dialogHref, { role:"dialog", changeHash:true, transition: "flip" } ); 
+                $.mobile.changePage(dialogHref, { role:"dialog", changeHash:true, transition: "flip" } );
                 // CHROME BUG: changeHash should always be true, but in chrome we cannot use> <a href="#">link</a> but instead <a href="dialogs.html">link</a>
             }
 
@@ -89,7 +89,7 @@
             }
 
         });
-        
+
     </script>
 </head>
 <body style="background-color:transparent;">
