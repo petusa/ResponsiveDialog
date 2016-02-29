@@ -75,7 +75,7 @@ ResponsiveDialog.init({
   });
 ```
 
-- Step 3: Include responsivedialog.js in your host HTML page. As ResponsiveDialog builts on jQuery Mobile do not forget to include a proper jQuery version as well.
+- Step 3: Include responsivedialog.js in your host HTML page. As ResponsiveDialog builts on jQuery Mobile which relies on jQuery in turn do not forget to include a proper jQuery version as well.
 ```html
 <script type="text/javascript" src="http://responsivedialog.com/responsivedialog.js"></script>
 ```
