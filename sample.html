@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test page</title>
+    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="//responsivedialog.com/responsivedialog.js"></script>
+</head>
+<body>
+    <h3>Hello ResponsiveDialog&GitHub visitor!</h3>
+    <p>
+    This is a minimal test page for showing the usage of ResponsiveDialog.
+    <br>
+    Look at the source code to grab a code snippet which is runnable from your localhost, after cloning the repo.
+    </p>
+    <a href="javascript:ResponsiveDialog.showDialog('dialog_template.html');">Show sample dialog.</a>
+    <hr>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            ResponsiveDialog.init({
+                onDialogsReady: function(){ console.log("ResponsiveDialog ready"); },
+                onDialogClosed: function(id){ console.log("responsive dialog with id '" + id + "' closed"); }
+            });
+        });
+    </script>
+</body>
+
+</html>
