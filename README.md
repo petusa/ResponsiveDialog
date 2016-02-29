@@ -1,6 +1,8 @@
 # ResponsiveDialog
 Lightweight dialog presenter for any screens built on top of [jQuery Mobile](http://jquerymobile.com/).
 
+Check the [DEMO page](www.responsivedialog.com) showing it's usage.
+
 # Features
 
 - Separates creating dialog pages from host page creation
@@ -19,7 +21,7 @@ Lightweight dialog presenter for any screens built on top of [jQuery Mobile](htt
 
 - Step 1: Design your dialog page following the jQuery Mobile dialog markup in a separate HTML file.
 
-You can simply grab and modify the provided [dialog_template.html](dialog_template.html).
+You can simply grab and modify the provided [dialog_template.html](dialogs/dialog_template.html).
 
 ```html
 <!DOCTYPE html>
@@ -65,9 +67,15 @@ You can simply grab and modify the provided [dialog_template.html](dialog_templa
 </html>
 ```
 
-- Step 2: Copy [responsivedialog.html](responsivedialog.html) in the same folder where your dialog page is created. You may also include the [responsivedialog.css](responsivedialog.css) file in your dialog page to assist you in centering and scaling your dialog embedded images automatically.
+- Step 2: Copy [responsivedialog.html](dialogs/responsivedialog.html) in the same folder where your dialog page is created. Preferably all the dialog pages are located along with the responsivedialog.html under the **dialogs/** folder. In other cases you need to specify the *dialogsFolder* parameter when initializing the ResponsiveDialog object:
+```javascript
+ResponsiveDialog.init({ 
+    dialogsFolder:"/myDialogsFolder", 
+    ... 
+  });
+```
 
-- Step 3: Include responsivedialog.js in your host HTML page
+- Step 3: Include responsivedialog.js in your host HTML page. As ResponsiveDialog builts on jQuery Mobile do not forget to include a proper jQuery version as well.
 ```html
 <script type="text/javascript" src="http://responsivedialog.com/responsivedialog.js"></script>
 ```
