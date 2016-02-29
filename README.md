@@ -1,7 +1,7 @@
 # ResponsiveDialog
 Lightweight dialog presenter for any screens built on top of [jQuery Mobile](http://jquerymobile.com/).
 
-Check the [DEMO page](www.responsivedialog.com) showing it's usage.
+Check the [DEMO page](http://www.responsivedialog.com) showing it's usage.
 
 # Features
 
